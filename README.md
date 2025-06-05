@@ -1,6 +1,8 @@
-# bitnet-vscode-extension README
+# BitNet-VSCode-Extension
 
-This is the README for your extension "bitnet-vscode-extension". After writing up a brief description, we recommend including the following sections.
+This is a VSCode extension which introduces Microsoft's BitNet LLM as a model context provider exposed REST API.
+
+Initialize and communicate with multiple BitNet servers from within VSCode's GitHub Copilot panel!
 
 ## Features
 
