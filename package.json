@@ -9,25 +9,69 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
   "main": "./extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "contributes": {
-    "commands": [{
-      "command": "bitnet-vscode-extension.helloWorld",
-      "title": "Hello World"
-    }]
+    "mcpServerDefinitionProviders": [
+      {
+        "id": "bitnet-vscode-extension",
+        "label": "BitNet MCP Server"
+      }
+    ],
+    "commands": [
+      {
+        "command": "bitnet.initializeMcpServer",
+        "title": "BitNet: Initialize MCP Server"
+      },
+      {
+        "command": "bitnet.startMcpServer",
+        "title": "BitNet: Start Server"
+      },
+      {
+        "command": "bitnet.checkDockerContainer",
+        "title": "BitNet: Check Docker Container"
+      },
+      {
+        "command": "bitnet.stopDockerContainer",
+        "title": "BitNet: Emergency Stop Docker Container"
+      },
+      {
+        "command": "bitnet.removeDockerContainer",
+        "title": "BitNet: Remove Docker Container"
+      },
+      {
+        "command": "bitnet.removeDockerImage",
+        "title": "BitNet: Remove Docker Image"
+      },
+      
+      {
+        "command": "bitnet.restartMcpServer",
+        "title": "BitNet: Restart Server"
+      },
+      
+      {
+        "command": "bitnet.showMcpServerStatus",
+        "title": "BitNet: Show FastAPI Server Status"
+      }
+    ]
   },
   "scripts": {
     "lint": "eslint .",
     "pretest": "npm run lint",
     "test": "vscode-test"
   },
+  "extensionDependencies": [
+    "ms-azuretools.vscode-docker"
+  ],
   "devDependencies": {
-    "@types/vscode": "^1.100.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "20.x",
-    "eslint": "^9.25.1",
+    "@types/vscode": "^1.100.0",
     "@vscode/test-cli": "^0.0.10",
-    "@vscode/test-electron": "^2.5.2"
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.25.1",
+    "vscode": "^1.1.37"
   }
 }
