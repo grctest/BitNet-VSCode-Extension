@@ -36,37 +36,6 @@ async function pullDockerImage(imageName) {
     });
 }
 
-async function runDockerContainer(imageName, containerName, ports = [], detached = true, envVars = []) {
-    console.log(`[BitNet] runDockerContainer called with imageName: ${imageName}, containerName: ${containerName}, ports: ${JSON.stringify(ports)}, detached: ${detached}, envVars: ${JSON.stringify(envVars)}`);
-    return new Promise((resolve, reject) => {
-        const args = ['run', '--name', containerName];
-        if (detached) args.push('-d');
-        ports.forEach(p => args.push('-p', p));
-        envVars.forEach(e => args.push('-e', e));
-        args.push(imageName);
-
-        vscode.window.withProgress({
-            location: vscode.ProgressLocation.Notification,
-            title: `Running Docker image: '${imageName}' as '${containerName}'`,
-            cancellable: false
-        }, async () => {
-            execFile('docker', args, (error, stdout, stderr) => {
-                if (error) {
-                    vscode.window.showErrorMessage(`Failed to run image '${imageName}': ${stderr || error.message}`);
-                    console.error(`[BitNet] Error running container '${containerName}':`, error, stderr);
-                    reject(error);
-                } else {
-                    vscode.window.showInformationMessage(`Container '${containerName}' is running.`);
-                    console.log(`[BitNet] Docker Run Output for ${containerName}:\n${stdout}`);
-                    resolve();
-                }
-            });
-        });
-    });
-}
-
-// ...existing code...
-
 class DockerManager {
     /**
      * Pulls the required Docker image using the Docker CLI.
