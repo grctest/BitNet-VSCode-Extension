@@ -82,3 +82,5 @@ When querying the BitNet servers you can remind the AI of the full possible form
 This enables you to pick the specific BitNet server you want to query, but also to change the other fields that are set on BitNet server initialization.
 
 You can both query an individual BitNet server, or query many BitNet servers in parallel through the multi-chat endpoint that's exposed to Copilot (when you ask to perform a multi-chat, not an individual server query).
+
+NOTE: Do not try to chat with port 8080 - that's the orchestrator port, provide the bitnet specific port and chat through the orchestrator with it.
