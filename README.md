@@ -27,6 +27,8 @@ The docker container hosts the [FastAPI-BitNet](https://github.com/grctest/FastA
 4. Run performance and perplexity benchmarks against the BitNet model.
 5. Check the BitNet server statuses.
 6. Estimate how many BitNet servers you can run and chat with.
+7. Shut down LLM server instances via chat.
+8. Fetches docker images, creates docker containers, handles container deletion and image updating via extension commands.
 
 Shuts down the docker container when you close VSCode.
 
