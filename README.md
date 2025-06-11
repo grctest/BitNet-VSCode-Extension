@@ -2,7 +2,7 @@
 
 This is a VSCode extension which introduces [Microsoft's BitNet LLM](https://github.com/microsoft/BitNet) as a model context provider exposed REST API.
 
-This enables you to initialize and communicate with multiple BitNet servers from within VSCode's GitHub Copilot panel!
+This enables you to initialize and communicate with multiple BitNet servers from within VSCode's GitHub Copilot panel, specifically with Microsoft's [BitNet b1.58 2B4T](https://huggingface.co/microsoft/bitnet-b1.58-2B-4T) model!
 
 Check it out on the Microsoft VSCode extension marketplace: https://marketplace.visualstudio.com/items?itemName=nftea-gallery.bitnet-vscode-extension
 
