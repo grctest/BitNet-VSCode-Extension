@@ -86,3 +86,11 @@ With the BitNet servers now up and running you can easily chat with the mixture 
 ![GtKUxzrWUAAGDU2](https://github.com/user-attachments/assets/9157963b-33d7-4842-8f38-6f5ce80473b3)
 
 You will likely be able to initialize more servers than you can chat with, as RAM is more abundant than CPU threads, so please bear in mind the limitations of your computer when running your mixture of experts BitNet setup.
+
+---
+
+## Known issues
+
+It's possible that Gemini 2.5 Pro is currently incompatible with this extension, if you're getting 'error 400 - bad request' errors when using Gemini 2.5 Pro try disabling the extension.
+
+This has proven to work with GPT 4.1 in Copilot recently.
