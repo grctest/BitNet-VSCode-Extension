@@ -91,6 +91,6 @@ You will likely be able to initialize more servers than you can chat with, as RA
 
 ## Known issues
 
-It's possible that Gemini 2.5 Pro is currently incompatible with this extension, if you're getting 'error 400 - bad request' errors when using Gemini 2.5 Pro try disabling the extension.
+It's possible that Gemini 2.5 Pro is currently incompatible with this extension, if you're getting 'error 400 - bad request' errors when using Gemini 2.5 Pro try disabling the model context protocol configuration in VSCode.
 
 This has proven to work with GPT 4.1 in Copilot recently.
