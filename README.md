@@ -4,6 +4,8 @@ This is a VSCode extension which introduces Microsoft's BitNet LLM as a model co
 
 Initialize and communicate with multiple BitNet servers from within VSCode's GitHub Copilot panel!
 
+Check it out on the Microsoft VSCode extension marketplace: https://marketplace.visualstudio.com/items?itemName=nftea-gallery.bitnet-vscode-extension
+
 ## Features
 
 Pulls the docker image from the docker hub repository.
@@ -16,6 +18,7 @@ The docker container hosts the [FastAPI-BitNet](https://github.com/grctest/FastA
 3. Integrates with GitHub Copilot, enabling the AI to launch the servers and communicate with them.
 4. Run performance and perplexity benchmarks against the BitNet model.
 5. Check the BitNet server statuses.
+6. Estimate how many BitNet servers you can run and chat with.
 
 Shuts down the docker container when you close VSCode.
 
@@ -53,34 +56,31 @@ If all has gone as planned now your GitHub copilot can communicate with the REST
 
 After you've followed the setup intructions and the tools have been found by Copilot, you can proceed to use it!
 
+### Step 0: Check how many BitNet servers your computer can handle
+
+Each BitNet server instance consumes around 1.5GB of RAM, and at a minimum 1 CPU thread each.
+
+You can request an estimate:
+
+![image](https://github.com/user-attachments/assets/7451398d-5754-49a1-bf7c-e664e2ad9686)
+
+
 ### Step 1: Initialize the BitNet servers!
 
-Ask copilot to launch several servers, best to remind it of the format in the query:
-```
-    threads: int = Query(os.cpu_count() // 2, gt=0, le=os.cpu_count()),
-    ctx_size: int = Query(2048, gt=0),
-    port: int = Query(8081, gt=1023),
-    system_prompt: str = Query("You are a helpful assistant.", description="Unique system prompt for this server instance"),
-    n_predict: int = Query(4096, gt=0, description="Number of tokens to predict for the server instance"),
-    temperature: float = Query(0.8, gt=0.0, le=2.0, description="Temperature for sampling")
-```
+Ask copilot to launch several BitNet servers, specifying the quantity of threads per server and a general system prompt direction.
 
-### Step 2: Chat with the BitNet servers!
+![GtHLN45WkAA9dLN](https://github.com/user-attachments/assets/fbc02b5b-b92d-49d5-bd75-9d797240baa6)
 
-Each server will have a different port within the dockerfile, when you 'chat' with one of the servers you'll need to provide the port to maintain the conversation with that BitNet server.
+### Step 2: Optionally check on the status of the BitNet servers you initialized
 
-When querying the BitNet servers you can remind the AI of the full possible format:
-```
-    message: str
-    port: int = 8081
-    threads: int = 1
-    ctx_size: int = 2048
-    n_predict: int = 256
-    temperature: float = 0.8
-```
+You can easily ask for a status check on all of the servers - expanding the server response will show how much resources they're consuming each too.
 
-This enables you to pick the specific BitNet server you want to query, but also to change the other fields that are set on BitNet server initialization.
+![GtKVqPDWMAAcTiR](https://github.com/user-attachments/assets/769ab617-71f0-4be7-a63f-c6194e0dae7d)
 
-You can both query an individual BitNet server, or query many BitNet servers in parallel through the multi-chat endpoint that's exposed to Copilot (when you ask to perform a multi-chat, not an individual server query).
+### Step 3: Chat with the BitNet servers!
 
-NOTE: Do not try to chat with port 8080 - that's the orchestrator port, provide the bitnet specific port and chat through the orchestrator with it.
+With the BitNet servers now up and running you can easily chat with the mixture of experts style BitNet server arrangement at will:
+
+![GtKUxzrWUAAGDU2](https://github.com/user-attachments/assets/9157963b-33d7-4842-8f38-6f5ce80473b3)
+
+You will likely be able to initialize more servers than you can chat with, as RAM is more abundant than CPU threads, so please bear in mind the limitations of your computer when running your mixture of experts BitNet setup.
