@@ -1,10 +1,18 @@
 # BitNet-VSCode-Extension
 
-This is a VSCode extension which introduces Microsoft's BitNet LLM as a model context provider exposed REST API.
+This is a VSCode extension which introduces [Microsoft's BitNet LLM](https://github.com/microsoft/BitNet) as a model context provider exposed REST API.
 
-Initialize and communicate with multiple BitNet servers from within VSCode's GitHub Copilot panel!
+This enables you to initialize and communicate with multiple BitNet servers from within VSCode's GitHub Copilot panel!
 
 Check it out on the Microsoft VSCode extension marketplace: https://marketplace.visualstudio.com/items?itemName=nftea-gallery.bitnet-vscode-extension
+
+## Requirements
+
+You must have docker installed on your computer, otherwise the extension won't work!
+
+You must have at least 8GB of disk space, whilst the dockerfile is 2GB compressed it's closer to 8GB when uncompressed!
+
+Each BitNet server instance will consume several hundred megabytes of RAM, so make sure you have enough RAM for the quantity of BitNet servers you initialize.
 
 ## Features
 
@@ -21,14 +29,6 @@ The docker container hosts the [FastAPI-BitNet](https://github.com/grctest/FastA
 6. Estimate how many BitNet servers you can run and chat with.
 
 Shuts down the docker container when you close VSCode.
-
-## Requirements
-
-You must have docker installed on your computer, otherwise the extension won't work!
-
-You must have at least 8GB of disk space, whilst the dockerfile is 2GB compressed it's closer to 8GB when uncompressed!
-
-Each BitNet server instance will consume several hundred megabytes of RAM, so make sure you have enough RAM for the quantity of BitNet servers you initialize.
 
 ## Setup Instructions
 
