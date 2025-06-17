@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/grctest-bitnet-vscode-extension-badge.png)](https://mseep.ai/app/grctest-bitnet-vscode-extension)
+
 # BitNet-VSCode-Extension
 
 This is a VSCode extension which introduces [Microsoft's BitNet LLM](https://github.com/microsoft/BitNet) as a model context provider exposed REST API.
