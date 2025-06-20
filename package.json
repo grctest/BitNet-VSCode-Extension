@@ -2,7 +2,7 @@
   "name": "bitnet-vscode-extension",
   "displayName": "BitNet-VSCode-Extension",
   "description": "Running BitNet via FastAPI, Docker and Model Context Provider endpoints.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "nftea-gallery",
   "engines": {
     "vscode": "^1.100.0"
