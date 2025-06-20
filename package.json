@@ -1,8 +1,10 @@
 {
   "name": "bitnet-vscode-extension",
   "displayName": "BitNet-VSCode-Extension",
-  "description": "Running BitNet via FastAPI, Docker and Model Context Provider endpoints.",
-  "version": "0.0.2",
+  "description": "Running Microsoft's BitNet inference framework via FastAPI, Docker and Model Context Protocol exposed local endpoints.",
+  "version": "0.0.3",
+  "icon": "icon.png",
+  "license": "MIT",
   "publisher": "nftea-gallery",
   "engines": {
     "vscode": "^1.100.0"
@@ -11,7 +13,23 @@
     "type": "git",
     "url": "https://github.com/grctest/BitNet-VSCode-Extension"
   },
+  "homepage": "https://github.com/grctest/BitNet-VSCode-Extension",
+  "keywords": [
+    "BitNet",
+    "LLM",
+    "local inference",
+    "local llama",
+    "Large language model",
+    "AI",
+    "Artificial Intelligence",
+    "MCP",
+    "Model Context Provider",
+    "Docker",
+    "FastAPI",
+    "llama"
+  ],
   "categories": [
+    "Machine Learning",
     "Other"
   ],
   "main": "./extension.js",
